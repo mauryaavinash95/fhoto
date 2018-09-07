@@ -3,7 +3,7 @@ include "header.php";
 
 // TODO
 // Modify the query to show posts ordered by their upload time.
-$sql_posts = "SELECT * FROM posts";
+$sql_posts = "SELECT * FROM posts ORDER BY timestamp DESC";
 $res_posts = mysqli_query($connect, $sql_posts);
 
 // TODO ADVANCED:
@@ -26,9 +26,9 @@ while($row_posts = mysqli_fetch_array($res_posts))
     $postid = $row_posts['postid'];
     // TODO:
     // How should we access the below variables? ($image, $timestamp, $text)
-    $image;
-    $timestamp ;
-    $text;
+    $image = $row_posts['image'];
+    $timestamp = $row_posts['timestamp'];
+    $text = $row_posts['text'];
 
     echo '<tr>';
 
@@ -60,3 +60,16 @@ echo "
     </center>";
 
 ?>
+
+
+<script>
+// TODO
+// Can you implement this similar functionality on My Post Page (dashboard/my_posts.php)
+// Function to convert PHP rendered timestamp in moment().fromNow();
+let timestamp = document.getElementById('timestamp').innerHTML;
+document.getElementById('timestamp').innerHTML = moment(timestamp).fromNow();
+
+// TODO ADVANCED
+// Can you make the above code non-redundant in index.php & my_posts.php files??
+
+</script>

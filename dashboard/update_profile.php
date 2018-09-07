@@ -33,7 +33,7 @@ include '../connect.php';
 		echo '</td>';
 		echo '<td>';
 		$email = $row_entry['email'];
-		echo '<input type="text" value="'.$email.'" name="email"/> ';
+		echo '<input type="text" value="'.$email.'" name="email" readonly/> ';
 		echo '</td>';
 		echo '</tr>';
 		echo '<td><b><center>';

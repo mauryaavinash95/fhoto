@@ -7,6 +7,7 @@ $res_posts = mysqli_query($connect, $sql_posts);
 // TODO:
 // This page uses the same code as dashboard/index.php.
 // Your task eliminate these redundant codes. How would you go about doing it?
+// Hint: Copy the below code in a file called table.php and include that file here.
 
 echo "
 <center>

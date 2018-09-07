@@ -7,7 +7,7 @@ $password = $_POST['password'];
 // TODO ADVANCED:
 // Secure password by storing MD5/SHA-512 hash in DB.
 
-$sql_users = "INSERT INTO `workshop`.`users` (`userid`, `name`, `email`, `password`) VALUES (NULL, '".$name."', '".$email."', '".$password."');";
+$sql_users = "INSERT INTO `users` (`userid`, `name`, `email`, `password`) VALUES (NULL, '".$name."', '".$email."', '".$password."');";
 $res_users = mysqli_query($connect, $sql_users);
 if($res_users== true)
 {

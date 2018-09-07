@@ -14,7 +14,7 @@ session_unset();
 session_destroy();
 // TODO:
 // Redirect the user to login page after logout.
-
+header( "refresh:0 ;url=../index.php" );
 ?>
 </body>
 </html>

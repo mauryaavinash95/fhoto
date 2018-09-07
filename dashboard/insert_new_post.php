@@ -17,11 +17,14 @@ if (move_uploaded_file($_FILES['fileToUpload']['tmp_name'], $uploadfile))
     $text = $_POST['post_text'];
     // TODO
     // Write an insert query to perform insertion of the new post in `post` table.
-    $sql_insert ; 
+    $sql_insert = "INSERT INTO posts (userid, timestamp, image, text) 
+    VALUES ('".$userid."', '".$timestamp."', 
+    '".$new_filename."', '".$post_text."');";
     mysqli_query($connect, $sql_insert);
     // TODO 
     // Present a more interactive response to user. Maybe you can use alert.
     // Land back the user to Home Page after this.
+    echo "<script type='text/javascript'>alert('Upload Successful'); header('location: index.php')</script>";
     echo "File is valid and was successfully uploaded.\n";
 }
 else

@@ -9,7 +9,7 @@ if(isset($_POST['delete_post_submit']))
     // TODO:
     // Check if the current user has uploaded the post with given ID, else show him/her error
     // How can you check this?
-    $sql_posts; 
+    $sql_posts = "SELECT * FROM posts WHERE postid='".$postid."' AND userid='".$_SESSION['userid']."'"; 
     $res_posts = mysqli_query($connect, $sql_posts);
     if(mysqli_num_rows($res_posts) > 0)
     {
@@ -23,6 +23,7 @@ if(isset($_POST['delete_post_submit']))
 }
 // TODO ADVANCED:
 // Can you do the two operations/DB calls listed above in a single query?
+// Hint: Check the response of 'DELETE FROM posts ' query, if it is true, means deletion successful else no such entry found.
 
 ?>
 <form method="post" action="" enctype="multipart/form-data">

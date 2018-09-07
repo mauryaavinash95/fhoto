@@ -22,7 +22,7 @@
             <tr>
                 <td>EMAIL: </td>
                 <td> 
-                {% comment %} Take EMAIL ID as input. The name attribute of this element should be 'email'. It is a required field {% endcomment %}
+                <input type="email" name="email" required />
                 <!-- Set minimum size of this field to 3 and maximum to 50. Should check to accept only string-->
                 </td>
             </tr>
@@ -60,6 +60,21 @@ function validateForm() {
         alert("Name must be filled out");
         return false;
     }
+
+    var email = document.forms['registration_form']['email'].value;
+    email = email.trim();
+    if(email.length < 8){
+        alert("EMAIL must be of 8 characters.");
+        return false;
+    }
+
+     var password = document.forms['registration_form']['password'].value;
+    password = password.trim();
+    if(password.length < 8){
+        alert("Password must be of 8 characters.");
+        return false;
+    }
+
 }
 </script>
 

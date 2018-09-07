@@ -13,9 +13,9 @@
 		// TODO:
 		// Retrive the below given fields from previous page.
 		// What would you use to retrive name? $_POST['name'] or $_SESSION['name'];
-		$name;
-		$email;
-		$password;
+		$name =  $_POST['name'];
+		$email = $_POST['email'];
+		$password = $_POST['password'];
 
 		$sql_update = 'UPDATE `users` SET `name`="'.$name.'",`password`="'.$password.'" WHERE email = "'.$email.'"';
 
